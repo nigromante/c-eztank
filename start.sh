@@ -5,4 +5,4 @@ cd run && ./scripts/zero.sh && cd ..
 cd eztank &&  rmk0 && rmk && rmki && cd ..
 cd exe    &&  rmk0 && rmk && rmki && cd ..
 
-cd package && ./mkpkg.sh && cd ..
+cd package && ./mkpkg.sh &&  sudo dpkg -i ./eztank.deb  &&  cd ..
