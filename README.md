@@ -32,4 +32,4 @@
 ## 4.- Install
 
 ### cd package
-### dpkg -i 
+### dpkg -i eztank.deb
