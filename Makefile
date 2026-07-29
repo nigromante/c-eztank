@@ -19,10 +19,10 @@ install:
 info:
 	@dpkg -c ./package/eztank.deb
 	@echo
-	@dpkg -s eztank-dev
+	@dpkg -s eztank-dev 2> /dev/null
 	@echo
-	@dpkg -L eztank-dev
+	@dpkg -L eztank-dev 2> /dev/null
 	@echo
 	@echo "which eztank:"
-	@which eztank
+	@which eztank 2> /dev/null
 
