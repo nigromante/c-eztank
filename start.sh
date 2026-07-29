@@ -11,3 +11,7 @@ sudo dpkg -l | grep eztank-dev
 
 which eztank_test.exe
 
+time {
+
+ eztank_test.exe
+}
