@@ -1,4 +1,5 @@
-$(info 'Makefile RELEASE' )
+$(info )
+$(info 'EXE - Makefile RELEASE' )
 $(info )
 
 #	Colors --------------------------------------------------------------------
@@ -11,7 +12,7 @@ RESET  := $(shell tput -Txterm sgr0)
 
 
 #	Executable Name -----------------------------------------------------------
-TARGETNAME:=eztank_test.exe
+TARGETNAME:=eztank
 
 #	Source Folders ------------------------------------------------------------
 SRCDIR:=./src
@@ -110,11 +111,15 @@ help:
 
 .PHONY: install
 install:
+	$(info )
+	$(info Install ...)
 	cp $(TARGET) $(INSTALL)
 
 .PHONY: zero
 zero:
+	$(info )
 	mkdir -p $(OBJDIR) $(DEPDIR) $(BINDIR)
+	$(info )
 
 .PHONY: info
 info:

@@ -1,4 +1,5 @@
-$(info 'Makefile RELEASE' )
+$(info )
+$(info 'EZTANK - Makefile RELEASE' )
 $(info )
 
 #	Colors --------------------------------------------------------------------
@@ -58,13 +59,20 @@ all: clean zero build install
 
 
 $(TARGET): $(OBJS) 
+	$(info  )
+	$(info Linking ... )
+	@echo -n "\t${YELLOW}"  
 	$(LD) -o $@ $(LDFLAGS) $(LDLIBS) $^
+	@echo -n "${RESET}"  
+	$(info )
 
 
 -include $(DEPS)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
+	@echo -n "\t${YELLOW}"  
 	$(CC) -o $@ $(CCFLAGS) $(DEPFLAGS) $<
+	@echo -n "${RESET}"  
 
 
 clean:
@@ -77,13 +85,17 @@ help:
 
 .PHONY: install
 install:
+	$(info )
+	$(info Install ...)
 	cp $(TARGET) $(INSTALL)/bin
 	cp $(SRCDIR)/include/eztank.h $(INSTALL)/include
 	cp $(SRCDIR)/include/ezvio.h $(INSTALL)/include
 
 .PHONY: zero
 zero:
+	$(info )
 	mkdir -p $(OBJDIR) $(DEPDIR) $(BINDIR)
+	$(info )
 
 .PHONY: info
 info:
