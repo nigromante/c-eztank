@@ -6,3 +6,8 @@ cd eztank &&  rmk0 && rmk && rmki && cd ..
 cd exe    &&  rmk0 && rmk && rmki && cd ..
 
 cd package && ./mkpkg.sh &&  sudo dpkg -i ./eztank.deb  &&  cd ..
+
+sudo dpkg -l | grep eztank-dev
+
+which eztank_test.exe
+
