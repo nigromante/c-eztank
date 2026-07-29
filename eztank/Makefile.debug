@@ -40,7 +40,8 @@ TARGET:=$(BINDIR)/$(TARGETNAME)
 
 # Compile ---------------------------------------------------------------------
 CC:=gcc
-CCFLAGS:=-c -g -Wall -fPIC -fvisibility=hidden -I ./src/include
+INCLUDE:=-I $(SRCDIR)/include
+CCFLAGS:=-c -g -Wall -fPIC -fvisibility=hidden
 DEPFLAGS = -MMD -MP -MF $(DEPDIR)/$*.d 
 
 # Link ------------------------------------------------------------------------
@@ -64,7 +65,7 @@ $(TARGET): $(OBJS)
 -include $(DEPS)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
-	$(CC) -o $@ $(CCFLAGS) $(DEPFLAGS) $<
+	$(CC) -o $@ $(CCFLAGS) $(DEPFLAGS) $(INCLUDE) $<
 
 
 clean:

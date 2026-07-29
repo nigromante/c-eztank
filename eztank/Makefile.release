@@ -41,7 +41,8 @@ TARGET:=$(BINDIR)/$(TARGETNAME)
 
 # Compile ---------------------------------------------------------------------
 CC:=gcc
-CCFLAGS:=-c -fPIC -fvisibility=hidden -I ./src/include
+INCLUDE:=-I $(SRCDIR)/include
+CCFLAGS:=-c -fPIC -fvisibility=hidden
 DEPFLAGS = -MMD -MP -MF $(DEPDIR)/$*.d 
 
 # Link ------------------------------------------------------------------------
@@ -71,7 +72,7 @@ $(TARGET): $(OBJS)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	@echo -n "\t${YELLOW}"  
-	$(CC) -o $@ $(CCFLAGS) $(DEPFLAGS) $<
+	$(CC) -o $@ $(CCFLAGS) $(DEPFLAGS) $(INCLUDE) $<
 	@echo -n "${RESET}"  
 
 
