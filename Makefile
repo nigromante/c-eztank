@@ -1,6 +1,6 @@
 EXEDIR = ./eztank ./exe
 
-all: prepare build pack install
+all: clean prepare build pack install
 
 prepare:
 	$(shell cd run && bash ./scripts/zero.sh && cd .. )
