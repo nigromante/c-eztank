@@ -1,0 +1,9 @@
+Package: eztank-dev
+Version: 1.0.0
+Section: libdevel
+Priority: optional
+Architecture: amd64
+Maintainer: Julian Vidal A <julianvidal@live.cl>
+Description: eztank library
+ Includes binaries, shared objects, and header files.
+ sources on : https://github.com/nigromante/c-eztank
