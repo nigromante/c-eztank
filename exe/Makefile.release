@@ -53,7 +53,7 @@ DEPFLAGS = -MMD -MP -MF $(DEPDIR)/$*.d
 LD:=gcc
 LDFLAGS:=-L $(LIBDIR)
 LDLIBS:=-leztank
-
+ 
 
 
 #	Actions -------------------------------------------------------------------
@@ -63,7 +63,7 @@ build: $(TARGET)
 
 
 .PHONY: all
-all: clean build run
+all: clean zero build install
 
 
 $(TARGET): $(OBJS) 

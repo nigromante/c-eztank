@@ -1,18 +1,27 @@
 #!/usr/bin/env bash
 
+
 cd run && ./scripts/zero.sh && cd ..
 
-cd eztank &&  rmk0 && rmk && rmki && cd ..
-cd exe    &&  rmk0 && rmk && rmki && cd ..
+cd eztank &&  rmka && cd ..
+cd exe    &&  rmka && cd ..
 
-cd package && ./mkpkg.sh &&  sudo dpkg -i ./eztank.deb  &&  cd ..
+echo "$@"
 
-sudo dpkg -l | grep eztank-dev
+if [[ "$1" == "all" ]]; then
 
-which eztank_test.exe
 
-time {
-    eztank_test.exe
-}
+    echo "package ..."
 
+    cd package && ./mkpkg.sh &&  sudo dpkg -i ./eztank.deb  &&  cd ..
+
+    sudo dpkg -l | grep eztank-dev
+
+    which eztank_test.exe
+
+    time {
+        eztank_test.exe
+    }
+
+fi
 

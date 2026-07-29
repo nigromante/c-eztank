@@ -54,7 +54,7 @@ LDLIBS:=
 build: $(TARGET)
 
 
-all: clean build run
+all: clean zero build install 
 
 
 $(TARGET): $(OBJS) 
@@ -72,16 +72,14 @@ clean:
 
 
 help:
-	@clear
 	@cat ./readme.txt
 
 
 .PHONY: install
 install:
-	@clear
-	@cp $(TARGET) $(INSTALL)/bin
-	@cp $(SRCDIR)/include/eztank.h $(INSTALL)/include
-	@cp $(SRCDIR)/include/ezvio.h $(INSTALL)/include
+	cp $(TARGET) $(INSTALL)/bin
+	cp $(SRCDIR)/include/eztank.h $(INSTALL)/include
+	cp $(SRCDIR)/include/ezvio.h $(INSTALL)/include
 
 .PHONY: zero
 zero:
