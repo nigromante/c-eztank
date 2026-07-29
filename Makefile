@@ -14,5 +14,5 @@ pack:
 
 
 install:
-	$(shell sudo dpkg -i ./package/eztank.deb )
+	$(shell sudo dpkg -i ./package/eztank.deb > /dev/null )
 
