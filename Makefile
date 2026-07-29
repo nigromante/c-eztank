@@ -10,6 +10,7 @@ build:
 
 pack:
 	$(shell cd ./package && bash ./mkpkg.sh && cd .. )
+	$(shell dpkg-deb --build ./package/eztank > /dev/null )
 
 
 install:

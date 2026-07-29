@@ -11,4 +11,3 @@ cp ../run/release/libs/include/* ./eztank/usr/include
 cp ../run/release/libs/bin/* ./eztank/usr/lib/x86_64-linux-gnu
 
 
-dpkg-deb --build eztank
