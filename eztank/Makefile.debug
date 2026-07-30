@@ -79,10 +79,9 @@ help:
 
 .PHONY: install
 install:
-	@clear
-	@cp $(TARGET) $(INSTALL)/bin
-	@cp $(SRCDIR)/include/eztank.h $(INSTALL)/include
-	@cp $(SRCDIR)/include/ezvio.h $(INSTALL)/include
+	cp $(TARGET) $(INSTALL)/bin
+	cp $(SRCDIR)/include/eztank.h $(INSTALL)/include
+	cp $(SRCDIR)/include/ezvio.h $(INSTALL)/include
 
 .PHONY: zero
 zero:
